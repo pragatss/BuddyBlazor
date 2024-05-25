@@ -106,5 +106,11 @@ label, input {
 
 .buddy-background {
     background-color: #031225 !important;
+    background-size: cover;
+}
+
+.horizontal-center {
+    margin-left:auto !important;
+    margin-right: auto !important;
 }
 

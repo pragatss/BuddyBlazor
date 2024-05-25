@@ -7,8 +7,7 @@
 <MudItem Class="buddy-background">
     <EditForm Model="@model" OnValidSubmit="OnValidSubmit">
         <DataAnnotationsValidator />
-        <MudGrid>
-            <MudItem Style="margin-right:auto; margin-left:auto" xs="3" sm="3">
+            <MudItem Class="horizontal-center" xs="3" sm="3">
                 <MudCard Class="buddy-background">
                     <MudCardContent>
                         <MudTextField  
@@ -17,7 +16,7 @@
                                       @bind-Value="model.Email"
                                       For="@(() => model.Email)" />
 
-                        <MudDatePicker AdornmentColor="Color.Tertiary" Label="Birth Date" @bind-Date="@model.BirthDate" />
+                        <MudDatePicker AdornmentColor="Color.Tertiary" For="@(() => model.BirthDate)" Label="Birth Date" @bind-Date="@model.BirthDate" />
 
 
                         <MudTextField Label="Password"
@@ -34,11 +33,10 @@
                                       InputType="InputType.Password" />
                     </MudCardContent>
                     <MudCardActions>
-                        <MudButton Style="margin-right:auto; margin-left:auto" ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Register</MudButton>
+                    <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto horizontal-center">Register</MudButton>
                     </MudCardActions>
                 </MudCard>
             </MudItem>
-        </MudGrid>
     </EditForm>
 
 </MudItem>
