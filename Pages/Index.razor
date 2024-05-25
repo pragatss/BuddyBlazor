@@ -1,8 +1,17 @@
 ﻿@page "/"
 
-<PageTitle>Index</PageTitle>
+<PageTitle>Welcome</PageTitle>
+<div style="background-color:#031225; justify-items:center">
+    <MudContainer Class="d-flex align-center justify-center" Style="height:100vh">
+        <span Style="color:white">Welcome To Focus Buddy.</span>
+    </MudContainer>
+</div>
 
-<h1>Welcome To Focus Buddy</h1>
 
-Welcome to your new app.
-
+@code {
+    private bool arrows = true;
+    private bool bullets = true;
+    private bool enableSwipeGesture = true;
+    private bool autocycle = true;
+    private Transition transition = Transition.Slide;
+}

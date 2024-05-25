@@ -17,5 +17,20 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.14" PrivateAssets="all" />
     <PackageReference Include="MudBlazor" Version="6.19.1" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\images\apple.png" />
+    <None Include="wwwroot\images\apple.svg" />
+    <None Include="wwwroot\images\gmail.png" />
+    <None Include="wwwroot\images\gmail.svg" />
+    <None Include="wwwroot\images\logo-bright.png" />
+    <None Include="wwwroot\images\logo-dark.png" />
+    <None Include="wwwroot\images\logo.png" />
+    <None Include="wwwroot\images\logo4.png" />
+    <None Include="wwwroot\images\microsoft.png" />
+    <None Include="wwwroot\images\microsoft.svg" />
+  </ItemGroup>
 
 </Project>
