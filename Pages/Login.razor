@@ -26,7 +26,13 @@
             </MudCard>
         </MudItem>
     </EditForm>
+    <MudButton Variant="Variant.Text" style="width:100vw; margin-top: 30px" Class="d-flex justify-center buddy-background">
+        <a onclick="window.location.href = '/register'">
+            <MudImage Src="images/gmail.svg"></MudImage> <span style="margin-left: 10px" class="white-text">Continue with Google</span>
+        </a>
+    </MudButton>
 </MudItem>
+
 
 @code {
     LoginModel model = new LoginModel();

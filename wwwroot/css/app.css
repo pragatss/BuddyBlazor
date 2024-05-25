@@ -100,7 +100,7 @@ a, .btn-link {
         content: var(--blazor-load-percentage-text, "Loading");
     }
 
-label, input {
+label, input, span {
     color: white !important;
 }
 
@@ -109,6 +109,9 @@ label, input {
     background-size: cover;
 }
 
+.white-text{
+    color:white
+}
 .horizontal-center {
     margin-left:auto !important;
     margin-right: auto !important;
