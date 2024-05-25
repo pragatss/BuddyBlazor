@@ -1,15 +1,15 @@
 ﻿@page "/register";
 
 @using System.ComponentModel.DataAnnotations
-<MudItem style="background-color:#031225; width:100vw" Class="d-flex justify-center">
+<MudItem style="width:100vw" Class="d-flex justify-center buddy-background">
     <MudImage Class="d-flex justify-center" Src="images/logo.png"></MudImage>
 </MudItem>
-<MudItem style="background-color:#031225;">
+<MudItem Class="buddy-background">
     <EditForm Model="@model" OnValidSubmit="OnValidSubmit">
         <DataAnnotationsValidator />
         <MudGrid>
             <MudItem Style="margin-right:auto; margin-left:auto" xs="3" sm="3">
-                <MudCard style="background-color:#031225;">
+                <MudCard Class="buddy-background">
                     <MudCardContent>
                         <MudTextField  
                             Label="Email"
@@ -42,14 +42,6 @@
     </EditForm>
 
 </MudItem>
-
-<style>
-    label, input
-    {
-        color:white !important;
-    }
-</style>
-
 
 @code {
     RegistrationModel model = new RegistrationModel();
