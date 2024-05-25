@@ -1,52 +1,60 @@
 {
   "Files": [
     {
-      "Id": "/Users/pragatwagle/Desktop/Projects/BuddyWeb/BuddyWebUI/bin/Debug/net7.0/wwwroot/_framework/blazor.webassembly.js",
+      "Id": "/Users/pragatwagle/Desktop/Projects/BuddyBlazor/bin/Debug/net7.0/wwwroot/_framework/blazor.webassembly.js",
       "PackagePath": "staticwebassets/_framework/blazor.webassembly.js"
     },
     {
-      "Id": "/Users/pragatwagle/Desktop/Projects/BuddyWeb/BuddyWebUI/obj/Debug/net7.0/build-gz/SBGvokdp.gz",
+      "Id": "/Users/pragatwagle/Desktop/Projects/BuddyBlazor/obj/Debug/net7.0/build-gz/SBGvokdp.gz",
       "PackagePath": "staticwebassets/_framework/blazor.webassembly.js.gz"
     },
     {
-      "Id": "/Users/pragatwagle/Desktop/Projects/BuddyWeb/BuddyWebUI/obj/Debug/net7.0/scopedcss/bundle/BuddyWebUI.styles.css",
-      "PackagePath": "staticwebassets/BuddyWebUI.styles.css"
+      "Id": "/Users/pragatwagle/Desktop/Projects/BuddyBlazor/obj/Debug/net7.0/scopedcss/bundle/BuddyBlazor.styles.css",
+      "PackagePath": "staticwebassets/BuddyBlazor.styles.css"
     },
     {
-      "Id": "/Users/pragatwagle/Desktop/Projects/BuddyWeb/BuddyWebUI/wwwroot/css/app.css",
+      "Id": "/Users/pragatwagle/Desktop/Projects/BuddyBlazor/wwwroot/.DS_Store",
+      "PackagePath": "staticwebassets/.DS_Store"
+    },
+    {
+      "Id": "/Users/pragatwagle/Desktop/Projects/BuddyBlazor/wwwroot/css/.DS_Store",
+      "PackagePath": "staticwebassets/css/.DS_Store"
+    },
+    {
+      "Id": "/Users/pragatwagle/Desktop/Projects/BuddyBlazor/wwwroot/css/app.css",
       "PackagePath": "staticwebassets/css/app.css"
     },
     {
-      "Id": "/Users/pragatwagle/Desktop/Projects/BuddyWeb/BuddyWebUI/wwwroot/favicon.png",
+      "Id": "/Users/pragatwagle/Desktop/Projects/BuddyBlazor/wwwroot/favicon.png",
       "PackagePath": "staticwebassets/favicon.png"
     },
     {
-      "Id": "/Users/pragatwagle/Desktop/Projects/BuddyWeb/BuddyWebUI/wwwroot/icon-192.png",
+      "Id": "/Users/pragatwagle/Desktop/Projects/BuddyBlazor/wwwroot/icon-192.png",
       "PackagePath": "staticwebassets/icon-192.png"
     },
     {
-      "Id": "/Users/pragatwagle/Desktop/Projects/BuddyWeb/BuddyWebUI/wwwroot/index.html",
+      "Id": "/Users/pragatwagle/Desktop/Projects/BuddyBlazor/wwwroot/index.html",
       "PackagePath": "staticwebassets/index.html"
     },
     {
-      "Id": "/Users/pragatwagle/Desktop/Projects/BuddyWeb/BuddyWebUI/wwwroot/sample-data/weather.json",
+      "Id": "/Users/pragatwagle/Desktop/Projects/BuddyBlazor/wwwroot/sample-data/weather.json",
       "PackagePath": "staticwebassets/sample-data/weather.json"
     },
     {
-      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.BuddyWebUI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.BuddyBlazor.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
     {
-      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.build.BuddyWebUI.props",
-      "PackagePath": "build\\BuddyWebUI.props"
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.build.BuddyBlazor.props",
+      "PackagePath": "build\\BuddyBlazor.props"
     },
     {
-      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.buildMultiTargeting.BuddyWebUI.props",
-      "PackagePath": "buildMultiTargeting\\BuddyWebUI.props"
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.buildMultiTargeting.BuddyBlazor.props",
+      "PackagePath": "buildMultiTargeting\\BuddyBlazor.props"
     },
     {
-      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.buildTransitive.BuddyWebUI.props",
-      "PackagePath": "buildTransitive\\BuddyWebUI.props"
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.buildTransitive.BuddyBlazor.props",
+      "PackagePath": "buildTransitive\\BuddyBlazor.props"
     }
   ],
   "ElementsToRemove": []
