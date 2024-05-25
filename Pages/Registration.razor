@@ -1,12 +1,53 @@
 ﻿@page "/register";
 
-<PageTitle>Register</PageTitle>
-<div style="background-color:#031225; justify-items:center">
-    <MudContainer Class="d-flex align-center justify-center" Style="height:100vh">
-        
-    </MudContainer>
-</div>
+@using System.ComponentModel.DataAnnotations
+<MudItem style="width:100vw" Class="d-flex justify-center buddy-background">
+    <MudImage Class="d-flex justify-center" Src="images/logo.png"></MudImage>
+</MudItem>
+<MudItem Class="buddy-background">
+    <EditForm Model="@model" OnValidSubmit="OnValidSubmit">
+        <DataAnnotationsValidator />
+            <MudItem Class="horizontal-center" xs="3" sm="3">
+                <MudCard Class="buddy-background">
+                    <MudCardContent>
+                        <MudTextField  
+                            Label="Email"
+                                      HelperText="Enter your email address"
+                                      @bind-Value="model.Email"
+                                      For="@(() => model.Email)" />
+
+                        <MudDatePicker AdornmentColor="Color.Tertiary" For="@(() => model.BirthDate)" Label="Birth Date" @bind-Date="@model.BirthDate" />
+
+
+                        <MudTextField Label="Password"
+                                      HelperText="Choose a strong password" Class="mt-3"
+                                      @bind-Value="model.Password"
+                                      For="@(() => model.Password)"
+                                      InputType="InputType.Password" />
+
+                        <MudTextField Label="Password"
+                                      HelperText="Repeat the password"
+                                      Class="mt-3"
+                                      @bind-Value="model.ConfirmPassword"
+                                      For="@(() => model.ConfirmPassword)"
+                                      InputType="InputType.Password" />
+                    </MudCardContent>
+                    <MudCardActions>
+                    <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto horizontal-center">Register</MudButton>
+                    </MudCardActions>
+                </MudCard>
+            </MudItem>
+    </EditForm>
+
+</MudItem>
 
 @code {
+    RegistrationModel model = new RegistrationModel();
+    bool success;
 
+    private void OnValidSubmit(EditContext context)
+    {
+        success = true;
+        StateHasChanged();
+    }
 }

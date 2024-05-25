@@ -100,3 +100,17 @@ a, .btn-link {
         content: var(--blazor-load-percentage-text, "Loading");
     }
 
+label, input {
+    color: white !important;
+}
+
+.buddy-background {
+    background-color: #031225 !important;
+    background-size: cover;
+}
+
+.horizontal-center {
+    margin-left:auto !important;
+    margin-right: auto !important;
+}
+
