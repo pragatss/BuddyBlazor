@@ -1,0 +1,32 @@
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{28869EC5-FB29-4BF4-8896-D61920591DE0}|https">
+  <MonoDevelop.Ide.ItemProperties.BuddyBlazor PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Pages/Index.razor">
+    <Files>
+      <File FileName="wwwroot/index.html" Line="10" Column="28" />
+      <File FileName="_Imports.razor" Line="11" Column="17" />
+      <File FileName="Shared/MainLayout.razor" Line="3" Column="19" />
+      <File FileName="Pages/Index.razor" Line="9" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="BuddyBlazor">
+            <Node name="BuddyBlazor">
+              <Node name="Pages" expanded="True" />
+              <Node name="Shared" expanded="True" />
+              <Node name="wwwroot" expanded="True">
+                <Node name="css" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
