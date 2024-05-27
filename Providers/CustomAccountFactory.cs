@@ -9,7 +9,6 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 using Microsoft.AspNetCore.Components.WebAssembly.Authentication.Internal;
 using Microsoft.Extensions.Configuration;
-using Microsoft.JSInterop;
 
 namespace BuddyBlazor.Providers
 {
@@ -18,18 +17,15 @@ namespace BuddyBlazor.Providers
     {
         private readonly AppAuthClient _appAuthClient;
         private readonly IConfiguration _config;
-        private readonly IJSRuntime _js;
         private readonly ISessionStorageService _sessionStorageService;
         public CustomAccountFactory(IAccessTokenProviderAccessor accessor,
             AppAuthClient appAuthClient,
             IConfiguration config,
-            IJSRuntime js,
             ISessionStorageService service
             ) : base(accessor)
         {
             _appAuthClient = appAuthClient;
             _config = config;
-            _js = js;
             _sessionStorageService = service;
 
         }
@@ -39,49 +35,46 @@ namespace BuddyBlazor.Providers
             var clientId = _config.GetValue<string>("Google:ClientId");
             var authority = _config.GetValue<string>("Local:Authority");
             var userDataKey = $"oidc.user:{authority}:{clientId}";
-            var userData = await _sessionStorageService.GetItemAsync<UserData>(userDataKey);
+            var userData = await _sessionStorageService.GetItemAsync<GoogleUserData>(userDataKey);
             return userData.id_token;
-        }
-
-        class UserData
-        {
-            public string id_token { get; set; }
-            public int expires_at { get; set; }
         }
 
         public async override ValueTask<ClaimsPrincipal> CreateUserAsync(
             RemoteUserAccount account, RemoteAuthenticationUserOptions options)
         {
-            var initialUser = await base.CreateUserAsync(account, options);
             try
             {
-                if (initialUser.Identity.IsAuthenticated)
+                var initialUser = await base.CreateUserAsync(account, options);
+
+                if (initialUser.Identity?.IsAuthenticated ?? false)
                 {
                     var googleUser = new HandleGoogleUserModel
                     {
-                        Email = initialUser.Claims.Where(_ => _.Type == "email").Select(_ => _.Value).FirstOrDefault(),
+                        Email = initialUser?.Claims?.Where(_ => _.Type == GoogleClaim.Email).Select(_ => _.Value).FirstOrDefault()!,
                         GoogleToken = await ReadIdToken()
-                        //,
-                        //FirstName = initialUser.Claims.Where(_ => _.Type == "given_name").Select(_ => _.Value).FirstOrDefault(),
-
-                        //LastName = initialUser.Claims.Where(_ => _.Type == "family_name").Select(_ => _.Value).FirstOrDefault()
                     };
 
                     var response = await _appAuthClient.RegisterGoogleUser(googleUser);
-
-                    //((ClaimsIdentity)initialUser.Identity).AddClaim(
-                    //    new Claim("APIjwt", response.JwtToken)
-                    //);
-
                 }
             }
             catch
             {
-                initialUser = new ClaimsPrincipal(new ClaimsIdentity());
+                throw;
             }
 
-            return initialUser;
+            return new ClaimsPrincipal(new ClaimsIdentity())!;
         }
+    }
+
+    public static class GoogleClaim
+    {
+        public static string Email = "email";
+    }
+
+    public class GoogleUserData
+    {
+        public string id_token { get; set; }
+        public int expires_at { get; set; }
     }
 }
 
