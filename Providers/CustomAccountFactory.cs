@@ -1,14 +1,9 @@
-﻿using System.Linq;
-using System.Security.Claims;
-using System.Security.Cryptography;
-using System.Threading.Tasks;
-using Blazored.SessionStorage;
+﻿using Blazored.SessionStorage;
 using BuddyBlazor.Client;
 using BuddyBlazor.Models;
-using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 using Microsoft.AspNetCore.Components.WebAssembly.Authentication.Internal;
-using Microsoft.Extensions.Configuration;
+using System.Security.Claims;
 
 namespace BuddyBlazor.Providers
 {
@@ -27,7 +22,6 @@ namespace BuddyBlazor.Providers
             _appAuthClient = appAuthClient;
             _config = config;
             _sessionStorageService = service;
-
         }
 
         private async Task<string> ReadIdToken()

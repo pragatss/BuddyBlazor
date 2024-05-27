@@ -1,25 +1,20 @@
-﻿using System.Net.Http.Json;
-using System.Text.Json;
-using System.Text;
-using BuddyBlazor.Models;
+﻿using BuddyBlazor.Models;
+using Flurl;
+using Flurl.Http;
 
 namespace BuddyBlazor.Client
 {
     public class AppAuthClient
     {
-        private HttpClient _httpClient;
-        public AppAuthClient(HttpClient httpClient)
-        {
-            _httpClient = httpClient;
-        }
+        private const string AuthBaseUrl = "https://localhost:44373";
 
-        public async Task<object> RegisterGoogleUser(HandleGoogleUserModel googleUserRequestModel)
+        public async Task<GoogleAuthResult> RegisterGoogleUser(HandleGoogleUserModel googleUserRequestModel)
         {
-            var postData = new StringContent(JsonSerializer.Serialize(googleUserRequestModel), Encoding.UTF8, "application/json");
-            var response = await _httpClient.PostAsync("api/user/HandleGoogleUser", postData);
-            response.EnsureSuccessStatusCode();
+            var result = await AuthBaseUrl.AppendPathSegments("api", "user", "HandleGoogleUser")
+                .PostJsonAsync(googleUserRequestModel)
+                .ReceiveJson<GoogleAuthResult>();  
 
-            return await response.Content.ReadFromJsonAsync<object>();
+            return result;
         }
     }
 }

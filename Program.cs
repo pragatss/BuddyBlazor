@@ -14,10 +14,6 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddMudServices();
 
-builder.Services.AddHttpClient<AppAuthClient>(options => {
-    options.BaseAddress = new Uri("https://localhost:44373");
-});
-
 builder.Services.AddBlazoredSessionStorage();
 
 builder.Services.AddOidcAuthentication<RemoteAuthenticationState,
