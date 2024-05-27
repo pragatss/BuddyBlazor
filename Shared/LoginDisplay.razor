@@ -5,7 +5,7 @@
 <AuthorizeView>
     <Authorized>
         Hello, @context.User.Identity.Name!
-        <button class="nav-link btn btn-link" @onclick="BeginSignOut">Log out</button>
+        <button class="nav-link btn btn-link">Log out</button>
     </Authorized>
     <NotAuthorized>
         <MudButton href="authentication/login" Variant="Variant.Text" style="width:100vw; margin-top: 30px" Class="d-flex justify-center buddy-background">
